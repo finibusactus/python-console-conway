@@ -1,5 +1,10 @@
 # Conway's game of life in the console
 
+## -Features
+  * Allows for an arbitary grid size - it only stores the coordinates of cells that are alive
+  * Memory efficent for the above reason
+  * Can save and load files
+
 
 ## File structure
   main.py - access point for the program  
