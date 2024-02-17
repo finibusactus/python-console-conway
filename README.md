@@ -1,9 +1,11 @@
 # Conway's game of life in the console
 
-## -Features
-  * Allows for an arbitary grid size - it only stores the coordinates of cells that are alive
-  * Memory efficent for the above reason
+## Features
+  * Allows for an arbitary grid size
+  * Memory efficent - it only stores the coordinates of cells that are alive
   * Can save and load files
+  * Can be run purely in terminal
+  * This makes it better than many other tools that either require Tk, GUI, or have limited grid sizes
 
 
 ## File structure
