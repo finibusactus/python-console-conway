@@ -6,6 +6,7 @@
   * Can save and load files
   * Can be run purely in terminal
   * This makes it better than many other tools that either require Tk, GUI, or have limited grid sizes
+  * Support for both Windows and Linux
 
 
 ## File structure

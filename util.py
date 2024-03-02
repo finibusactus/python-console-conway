@@ -34,18 +34,20 @@ def _unix_getch():
         character = stdin.read(1)
     finally:
         termios.tcsetattr(file_descriptor, termios.TCSADRAIN, old_settings)
-    return character
+    return bytes(character, 'utf-8')
 
 def _unix_getkp():
-    ESCAPE = chr(27)
-    CONTROL = ESCAPE + '['
-    SPECIAL = {CONTROL+'A':'UP', CONTROL+'B':'DOWN', CONTROL+'C':'RIGHT', CONTROL+'D':'LEFT', CONTROL+'5~':'PAGEUP', CONTROL+'6~':'PAGEDOWN'}
+    ESCAPE = bytes(chr(27), 'utf-8')
+    CONTROL = ESCAPE + b'['
+    SPECIAL = {bytes(CONTROL+b'A'):b'UP', bytes(CONTROL+b'B'):b'DOWN', bytes(CONTROL+b'C'):b'RIGHT', bytes(CONTROL+b'D'):b'LEFT', bytes(CONTROL+b'5~'):b'PAGEUP', (CONTROL+b'6~'):b'PAGEDOWN',
+        b'\x03':b'CONTROL+C', b'\x04':b'CONTROL+D', b'\x1a':b'CONTROL+Z'   
+    }
     buffer = _unix_getch()
     while any(i.startswith(buffer) for i in SPECIAL.keys()):
         if buffer in SPECIAL:
             return SPECIAL[buffer]
-        buffer += _unix_getch
-    return buffer.decode()
+        buffer += _unix_getch()
+    return buffer
 
 def getkp() -> bytearray:
     try:
@@ -81,6 +83,5 @@ def set_to_csv_data(file_name, set_data):
 def clear_screen():
     for i in range(200):
         print('\n')
-
 
 
