@@ -19,6 +19,7 @@ class Game:
         self.game_loop_speed = 1
         self.game_loop_paused = False
         self.previous_screen_state = ''
+        self.previous_cursor_position = [0,0]
 
     def quit(self):
         'we have to close the threads before leaving'
@@ -26,7 +27,6 @@ class Game:
         return
 
     def _redraw(self):
-        'quite unoptimised, TODO fix'
         OUTPUT_MAP = {False:".", True: "\x1b[1;93m#\x1b[0m"}
         text = ''
         tmp_array = []
@@ -41,10 +41,12 @@ class Game:
                 text += OUTPUT_MAP[True] if num > 0 else OUTPUT_MAP[False]
                 j += self.character_scale_factor
             i += self.character_scale_factor
-        full_text = '\r' + text + f'\x1b[{self.cursor_position[1]+1};{self.cursor_position[0]+1}H'
+        full_text = '\r' + text
         'only draw if neccessary'
         if full_text == self.previous_screen_state:
-            return
+            if self.previous_cursor_position == self.cursor_position:
+                print(f'\x1b[{self.cursor_position[1]+1};{self.cursor_position[0]+1}H')
+                self.previous_cursor_position = self.cursor_position
         self.previous_screen_state = full_text
         print()
         print('\r' + text + f'\x1b[{self.cursor_position[1]+1};{self.cursor_position[0]+1}H', end='', flush=True)
