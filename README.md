@@ -36,6 +36,9 @@
 
   Run the file `python3 conway_cli.py` or use `python3 conway_cli.py help`
 
+## Pictures and examples
+  >$ python conway_cli.py -l saves/custom_save.csv 
+  ![A demo showing a working glider gun and several gliders](glider_gun_in_action.png)
 
 ## Dependency Graph using Mermaid
 
@@ -47,3 +50,5 @@
   main.py-->conway_cli.py;
   command_line_args-->conway_cli.py
   ```
+
+[def]: glider_gun_
