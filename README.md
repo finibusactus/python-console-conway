@@ -34,7 +34,7 @@
 ## Running the game  
   Run the file `python3 main.py` and/or change the save and load files at the top of the file
 
-  Run the file `python3 conway_cli.py` or use `python3 conway_cli.py help`
+  Run the file `python3 conway_cli.py` or use `python3 conway_cli.py --help`
 
 ## Pictures and examples
   >$ python3 conway_cli.py -l saves/glider_gun.csv 
