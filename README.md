@@ -25,30 +25,28 @@
  Control+C to terminate and save
 
 ## Need to know
-  >In the top of the file 'main.py' change the variable declarations to save and load from a different file  
+  At the top of the file 'main.py', change the variable declarations to save and load from a different file  
   The save file is a list of coordinates in csv format of all the cells that are alive 
 
-  >The game is initailly paused when data is loaded from a file 
+  The game is initially paused when data is loaded from a file 
 
 
-## Opening the game  
+## Running the game  
   Run the file `python3 main.py` and/or change the save and load files at the top of the file
 
   Run the file `python3 conway_cli.py` or use `python3 conway_cli.py help`
 
 ## Pictures and examples
-  >$ python conway_cli.py -l saves/custom_save.csv 
+  >$ python3 conway_cli.py -l saves/glider_gun.csv 
   ![A demo showing a working glider gun and several gliders](glider_gun_in_action.png)
 
 ## Dependency Graph using Mermaid
 
   ```mermaid
   graph LR;
-  game.py-->main.py;
-  util.py-->main.py;
-  save_and_load_files-->main.py;
-  main.py-->conway_cli.py;
-  command_line_args-->conway_cli.py
+  main.py-->game.py;
+  main.py-->util.py;
+  conway_cli.py-->main.py;
+  main.py-->external_save_and_load_files;
+  conway_cli.py-->external_command_line_args;
   ```
-
-[def]: glider_gun_
