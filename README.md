@@ -1,11 +1,10 @@
 # Conway's game of life in the console
 
 ## Features
-  * Allows for an arbitary grid size
+  * Allows for an arbitary grid size unlike other programs
   * Memory efficent - it only stores the coordinates of cells that are alive
   * Can save and load files
-  * Can be run purely in terminal
-  * This makes it better than many other tools that either require Tk, GUI, or have limited grid sizes
+  * Can be run purely in terminal - makes it better than many other tools that either require Tk or a GUI
   * Support for both Windows and Linux
 
 
