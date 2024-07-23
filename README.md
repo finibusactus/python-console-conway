@@ -39,7 +39,7 @@
 ## Pictures and examples
   >$ python3 conway_cli.py -l saves/glider_gun.csv 
 
-  ![A demo showing a working glider gun and several gliders](glider_gun_in_action.png "An image of the above command")
+  ![A screenshot showing a working glider gun and several gliders from the above command](glider_gun_in_action.png?raw=true "An image of the above command")
 
 ## Dependency Graph using Mermaid
 
