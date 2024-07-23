@@ -44,7 +44,7 @@
 ## Dependency Graph using Mermaid
 
   ```mermaid
-  graph LR;
+  graph TD;
   main.py-->game.py;
   main.py-->util.py;
   conway_cli.py-->main.py;
