@@ -27,7 +27,7 @@
   At the top of the file 'main.py', change the variable declarations to save and load from a different file  
   The save file is a list of coordinates in csv format of all the cells that are alive 
 
-  The game is initially paused when data is loaded from a file 
+  **The game is initially paused when data is loaded from a file!**
 
 
 ## Running the game  
@@ -37,7 +37,7 @@
   Run `python3 conway_cli.py --help` for help
 
 ## Pictures and examples
-  >$ python3 conway_cli.py -l saves/glider_gun.csv 
+  `$ python3 conway_cli.py -l saves/glider_gun.csv `
 
   ![A screenshot showing a working glider gun and several gliders from the above command](glider_gun_in_action.png "The image produced from the above command")
 
